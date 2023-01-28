@@ -58,7 +58,7 @@ public class EjercicioU2PaP3DllApplication implements CommandLineRunner{
 		renta1.setCliente(clie1);
 		renta1.setAutomovil(auto1);
 		renta1.setPago1(null);
-		
+		//s
 		Pago pago1=new Pago();
 		pago1.setNumeroTargeta("13213");
 		pago1.setRenta(null);
