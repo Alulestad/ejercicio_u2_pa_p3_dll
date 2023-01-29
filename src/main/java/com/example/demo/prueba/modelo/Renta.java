@@ -41,8 +41,8 @@ public class Renta {
 	@JoinColumn(name = "rent_id_cliente")
 	private Cliente cliente;
 	
-	@OneToOne (mappedBy = "renta",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Pago pago1;
+	@OneToOne (mappedBy = "renta",cascade = {CascadeType.PERSIST,CascadeType.REMOVE}, fetch = FetchType.EAGER)
+	private Pago pago;
 
 	public Integer getId() {
 		return id;
@@ -92,12 +92,12 @@ public class Renta {
 		this.cliente = cliente;
 	}
 
-	public Pago getPago1() {
-		return pago1;
+	public Pago getPago() {
+		return pago;
 	}
 
-	public void setPago1(Pago pago1) {
-		this.pago1 = pago1;
+	public void setPago(Pago pago1) {
+		this.pago = pago1;
 	}
 	
 	

@@ -38,41 +38,44 @@ public class EjercicioU2PaP3DllApplication implements CommandLineRunner{
 		// TODO Auto-generated method stub
 		
 		Cliente clie1= new Cliente();
-		clie1.setCedula("12345344463");
+		clie1.setCedula("1234534446");
 		clie1.setNombre("Daniel");
 		clie1.setRenta(null);
 		
+		
 		Automovil auto1 = new Automovil();
-		auto1.setPlaca("ABC13434432");
+		auto1.setPlaca("ABC1343443");
 		auto1.setValorPorDia(new BigDecimal(20));
 		auto1.setRenta(null);
 		
 		
-		clienteService.agregar(clie1);
-		automovilService.agregar(auto1);
+		//clienteService.agregar(clie1);
+		//automovilService.agregar(auto1);
 		
 		Renta renta1= new Renta();
 		renta1.setFecha(LocalDateTime.now());
 		renta1.setNumeroDias(2);
-		renta1.setValor(null);
+		//renta1.setValor(null); //logica
 		renta1.setCliente(clie1);
 		renta1.setAutomovil(auto1);
-		renta1.setPago1(null);
+
 		//s
 		Pago pago1=new Pago();
 		pago1.setNumeroTargeta("13213");
-		pago1.setRenta(null);
-		pago1.setValor(new BigDecimal(0));
+		pago1.setRenta(renta1); 
+		//pago1.setValor(new BigDecimal(0)); //logica
 		
-		iRentaService.agregar(renta1);
-		iPagoService.agregar(pago1);
+		renta1.setPago(pago1);
 		
-		iRentaService.eliminar(3);
-		//iPagoService.eliminar(2);
+		//iRentaService.agregar(renta1);
+		
+
+		//iRentaService.eliminar(4);
+		iPagoService.eliminar(301);
 		
 		
-		System.out.println(automovilService.buscarPlaca("ABC132"));
-		System.out.println(clienteService.buscarCedula("123456"));
+		//System.out.println(automovilService.buscarPlaca("ABC132"));
+		//System.out.println(clienteService.buscarCedula("123456"));
 		
 		
 		
